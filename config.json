@@ -1,0 +1,22 @@
+{
+  "Token": "YOUR TOKEN HERE",
+  "Server_ID": 0,
+  "Channel_ID": 0,
+  "Font": {
+    "file": "hack.ttf",
+    "size": 36
+  },
+  "Banner": {
+    "Folder":"normal",
+    "Rounded": {
+      "is_rounded": 0,
+      "px": 10
+     },
+    "AvatarSize": [95, 95],
+    "AvatarPos": [720, 12],
+    "TextPos": [240, 65],
+    "Text_Color": [255,255,255]
+  },
+  "WelcomeMessage": "Hello {mention}",
+  "FormattingExamples": "{mention} mentions the user, {name} is their username"
+}
