@@ -63,11 +63,16 @@ class Jahy(discord.Client):
       if (self.banner_cfg["Rounded"]["is_rounded"]):
         avatar = self.round_corners(avatar, self.banner_cfg["Rounded"]["px"])
     # Now that we have our avatar, we can slap it into our banner.
-    base.paste(avatar, self.banner_cfg["AvatarPos"])
+    final = Image.new("RGBA", base.size)
+    final.paste(avatar, self.banner_cfg["AvatarPos"])
+    if(self.banner_cfg["AvatarLayer"]=="front"):
+      final = Image.alpha_composite(base, final)
+    if(self.banner_cfg["AvatarLayer"]=="back"):
+      final = Image.alpha_composite(final, base)
     
     # Lastly, let's package it as a file to be uploaded.
     with io.BytesIO() as fb:
-      base.save(fb, format="png")
+      final.save(fb, format="png")
       fb.seek(0, 0)
       
       return discord.File(fb, filename="Welcome.png")

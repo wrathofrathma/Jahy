@@ -14,6 +14,7 @@
      },
     "AvatarSize": [95, 95],
     "AvatarPos": [720, 12],
+    "AvatarLayer": "front",
     "TextPos": [240, 65],
     "Text_Color": [255,255,255]
   },
